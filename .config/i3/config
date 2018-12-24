@@ -1,0 +1,244 @@
+# softwares
+set $terminal urxvt
+set $screenshot "escrotum -s -C"
+set $full_screenshot "escrotum ~/Pictures/Screenshots/$(date +%s).png && notify-send 'Screenshot saved'"
+set $menu "i3-dmenu-desktop --dmenu='rofi -i -dmenu -font IBM\ Plex\ Sans\ Medium\ 15'"
+set $browser chromium
+set $file_explorer "urxvt -e ranger"
+set $email_client "thunderbird"
+set $music_player spotify
+
+# quick settings
+
+set $network_settings "urxvt -hold -name urxvt-floating -e wicd-curses"
+set $audio_settings "urxvt -hold -name urxvt-floating -e ncpamixer"
+
+# (no) title bars
+for_window [class="^.*"] border pixel 2
+
+# gaps
+gaps inner 10
+gaps outer 0
+smart_gaps on
+
+# style
+
+# colors
+set $black       #212121
+set $darkblack   #000000
+set $red         #fb4934
+set $darkred     #cc241d
+set $green       #b8bb26
+set $darkgreen   #98971a
+set $yellow      #fabd2f
+set $darkyellow  #d79921
+set $blue        #83a598
+set $darkblue    #458588
+set $magenta     #d3869b
+set $darkmagenta #b16286
+set $cyan        #8ec07c
+set $darkcyan    #689d6a
+set $white       #ebdbb2
+set $darkwhite   #a89984
+set $background  #000000
+set $transparent #00000000
+
+# font
+font xft:DejaVuSansMono Nerd Font:style=Book
+
+# helper script
+bindsym $mod+Tab exec --no-startup-id ~/bin/nx2w_helper
+
+# windows button
+set $mod Mod4
+
+# floating mod
+floating_modifier $mod
+
+# terminal
+bindsym $mod+Return exec --no-startup-id $terminal
+
+# kill window
+bindsym $mod+Shift+q kill
+
+# $mod+space to run $menu
+bindsym $mod+space exec --no-startup-id $menu
+
+# bind screenshot
+bindsym Print exec --no-startup-id $screenshot
+bindsym Shift+Print exec --no-startup-id $full_screenshot
+
+# arrow keys to change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# bring back that gnome feeling :D
+bindsym Control+Mod1+Left workspace prev
+bindsym Control+Mod1+Right workspace next
+
+
+# arrow keys to move windows
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+
+#!GET_VARS
+
+workspace 1 output $monitor1
+workspace 2 output $monitor2
+workspace 3 output $monitor1
+workspace 4 output $monitor2
+workspace 5 output $monitor1
+workspace 6 output $monitor2
+workspace 7 output $monitor1
+workspace 8 output $monitor2
+workspace 9 output $monitor1
+workspace 10 output $monitor2
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Move focus between screens
+bindsym $mod+Control+Left focus output left
+bindsym $mod+Control+Right focus output right
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace 
+bindsym $mod+Shift+r restart
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window
+mode "resize" {
+        #Also arrow keys for resize
+        bindsym Left resize shrink width 10 px or 5 ppt
+        bindsym Down resize grow height 10 px or 5 ppt
+        bindsym Up resize shrink height 10 px or 5 ppt
+        bindsym Right resize grow width 10 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Quick launcher
+
+set $mode_launcher [b]browser [f]file_explorer [e]email_client [m]music_player
+bindsym $mod+o mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym b exec $browser; mode "default"
+    bindsym f exec $file_explorer; mode "default"
+    bindsym e exec $email_client; mode "default"
+    bindsym m exec $music_player; mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+# Quick settings
+
+set $mode_settings [n]network [a]audio
+bindsym $mod+t mode "$mode_settings"
+
+mode "$mode_settings" {
+    bindsym n exec $network_settings; mode "default"
+    bindsym a exec $audio_settings; mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+
+
+#i3bar
+bar {
+        tray_output primary
+        verbose yes
+        position top
+        status_command i3blocks
+        i3bar_command SCRIPTS_DIR=/home/federico_arch/.config/i3blocks/ i3bar -t
+        colors {
+          statusline #ffffff
+          background $transparent
+        }
+}
+
+# urxvt floating
+for_window [instance="urxvt-floating"] floating enable
+
+# signals for caps/num lock for i3blocks
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+# pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 
+
+# media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# autostart
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpaper.jpg
+exec --no-startup-id conky
+exec --no-startup-id dex -ae i3
+
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id bash ~/.screenlayout/default.sh

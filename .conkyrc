@@ -1,0 +1,90 @@
+xftfont DejaVuSansMono Nerd Font:style=Book:size=8.5
+use_xft yes
+xftalpha 0.9
+update_interval 1.0
+total_run_times 0
+
+background yes
+own_window yes
+own_window_argb_visual yes
+own_window_type override
+ow_window_class Conky
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 220 5
+maximum_width 500
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 12
+gap_y 28
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+uppercase yes # set to yes if you want all text to be in uppercase
+
+# Default colors and also border colors
+default_color white
+own_window_colour 000000
+color1 a4a4a4
+color2 849A00
+color3 9CFC4D
+color4 E3D1A4
+color5 CC2222
+
+TEXT
+${color grey}SYSTEM ${hr 3}${color}
+
+Hostname: $alignr$nodename
+Kernel: $alignr$kernel
+Uptime: $alignr$uptime
+Temp: ${alignr}${acpitemp}C
+
+CPU: ${alignr}${freq} MHz
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+
+${color grey}HARDWARE ${hr 1}${color}
+${color}${execi 1000 cat /proc/cpuinfo | grep 'model name' | uniq | cut -c 14-80}${color}
+
+CPU ${alignr}${cpu cpu}%
+${cpubar cpu }
+
+Ram ${alignr}$mem / $memmax ($memperc%)
+${membar 8}
+swap ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 8}
+
+${color grey}PROCESSES ${hr 1}${color}
+
+Highest CPU $alignr CPU% MEM%
+${top name 1}$alignr${top cpu 1}${top mem 1}
+${top name 2}$alignr${top cpu 2}${top mem 2}
+${top name 3}$alignr${top cpu 3}${top mem 3}
+
+Highest MEM $alignr CPU% MEM%
+${top_mem name 1}$alignr${top_mem cpu 1}${top_mem mem 1}
+${top_mem name 2}$alignr${top_mem cpu 2}${top_mem mem 2}
+${top_mem name 3}$alignr${top_mem cpu 3}${top_mem mem 3}
+
+${color grey}Filesystem ${hr 1}${color}
+
+Root: ${alignr}${fs_free /} / ${fs_size /}
+${fs_bar 4 /}
+Home: ${alignr}${fs_free /home} / ${fs_size /home}
+${fs_bar 4 /home}
+Disk: ${alignr}${fs_free /disk} / ${fs_size /disk}
+${fs_bar 4 /disk}
+
+${color grey}NETWORK ${hr 1}${color}
+
+Down ${downspeed wlo1} k/s ${alignr}Up ${upspeed wlo1} k/s
+${downspeedgraph wlo1 25,107 789E2D A7CC5C} ${alignr}${upspeedgraph wlo1 25,107 789E2D A7CC5C}
+Total ${totaldown wlo1} ${alignr}Total ${totalup wlo1}
