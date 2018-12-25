@@ -14,6 +14,7 @@ set $im telegram-desktop
 
 set $network_settings "urxvt -hold -name urxvt-floating -e wicd-curses"
 set $audio_settings "urxvt -hold -name urxvt-floating -e ncpamixer"
+set $update "urxvt -hold -name urxvt-floating -e bash -c 'sudo pacman -Syu && yay -Syu'"
 
 # (no) title bars
 for_window [class="^.*"] border pixel 2
@@ -190,12 +191,13 @@ mode "$mode_launcher" {
 
 # Quick settings
 
-set $mode_settings [n]network [a]audio
+set $mode_settings [n]network [a]audio [u]update
 bindsym $mod+t mode "$mode_settings"
 
 mode "$mode_settings" {
     bindsym n exec $network_settings; mode "default"
     bindsym a exec $audio_settings; mode "default"
+    bindsym u exec $update; mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -244,4 +246,4 @@ exec --no-startup-id dex -ae i3
 
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id bash ~/.screenlayout/default.sh
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpaper.jpg
+exec --no-startup-id sleep 1 && feh --bg-scale ~/Pictures/Wallpaper.jpg
