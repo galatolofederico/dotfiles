@@ -5,7 +5,7 @@ set $full_screenshot "escrotum ~/Pictures/Screenshots/$(date +%s).png && notify-
 set $menu "i3-dmenu-desktop --dmenu='rofi -i -dmenu -font IBM\ Plex\ Sans\ Medium\ 15'"
 
 set $browser chromium
-set $file_explorer "urxvt -e ranger"
+set $file_explorer "urxvt -hold -e ranger"
 set $email_client "thunderbird"
 set $music_player spotify
 set $im telegram-desktop
@@ -241,9 +241,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # autostart
-exec --no-startup-id conky
+exec --no-startup-id sleep 1 && bash ~/.screenlayout/default.sh 
+
 exec --no-startup-id dex -ae i3
 
-exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id bash ~/.screenlayout/default.sh
-exec --no-startup-id sleep 1 && feh --bg-scale ~/Pictures/Wallpaper.jpg
+exec --no-startup-id sleep 3 && conky
+exec --no-startup-id sleep 3 && feh --bg-scale ~/Pictures/Wallpaper.jpg
