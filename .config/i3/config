@@ -3,10 +3,12 @@ set $terminal urxvt
 set $screenshot "escrotum -s -C"
 set $full_screenshot "escrotum ~/Pictures/Screenshots/$(date +%s).png && notify-send 'Screenshot saved'"
 set $menu "i3-dmenu-desktop --dmenu='rofi -i -dmenu -font IBM\ Plex\ Sans\ Medium\ 15'"
+
 set $browser chromium
 set $file_explorer "urxvt -e ranger"
 set $email_client "thunderbird"
 set $music_player spotify
+set $im telegram-desktop
 
 # quick settings
 
@@ -172,7 +174,7 @@ bindsym $mod+r mode "resize"
 
 # Quick launcher
 
-set $mode_launcher [b]browser [f]file_explorer [e]email_client [m]music_player
+set $mode_launcher [b]browser [f]files [e]emails [m]music [i]im
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -180,6 +182,7 @@ mode "$mode_launcher" {
     bindsym f exec $file_explorer; mode "default"
     bindsym e exec $email_client; mode "default"
     bindsym m exec $music_player; mode "default"
+    bindsym i exec $im; mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -236,9 +239,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # autostart
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpaper.jpg
 exec --no-startup-id conky
 exec --no-startup-id dex -ae i3
 
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id bash ~/.screenlayout/default.sh
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpaper.jpg
