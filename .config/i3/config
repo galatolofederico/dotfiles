@@ -10,6 +10,8 @@ set $email_client "thunderbird"
 set $music_player spotify
 set $im telegram-desktop
 
+set $logout "urxvt -hold -name urxvt-floating -e ~/bin/exit_dialog"
+
 # quick settings
 
 set $network_settings "urxvt -hold -name urxvt-floating -e wicd-curses"
@@ -66,6 +68,9 @@ bindsym $mod+Shift+q kill
 
 # $mod+space to run $menu
 bindsym $mod+space exec --no-startup-id $menu
+
+# $mod+Esc to run logout dialog
+bindsym $mod+Escape exec --no-startup-id $logout
 
 # bind screenshot
 bindsym Print exec --no-startup-id $screenshot
