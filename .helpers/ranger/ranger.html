@@ -1,0 +1,217 @@
+<h1 id="ranger">Ranger</h1>
+<h2 id="general">General</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ranger</code></td>
+<td>Start Ranger</td>
+</tr>
+<tr class="even">
+<td><code>Q</code></td>
+<td>Quit Ranger</td>
+</tr>
+<tr class="odd">
+<td><code>R</code></td>
+<td>Reload current directory</td>
+</tr>
+<tr class="even">
+<td><code>?</code></td>
+<td>Ranger Manpages / Shortcuts</td>
+</tr>
+</tbody>
+</table>
+<h2 id="movement">Movement</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>k</code></td>
+<td>up</td>
+</tr>
+<tr class="even">
+<td><code>j</code></td>
+<td>down</td>
+</tr>
+<tr class="odd">
+<td><code>h</code></td>
+<td>parent directory</td>
+</tr>
+<tr class="even">
+<td><code>l</code></td>
+<td>subdirectory</td>
+</tr>
+<tr class="odd">
+<td><code>gg</code></td>
+<td>go to top of list</td>
+</tr>
+<tr class="even">
+<td><code>G</code></td>
+<td>go t bottom of list</td>
+</tr>
+<tr class="odd">
+<td><code>J</code></td>
+<td>half page down</td>
+</tr>
+<tr class="even">
+<td><code>K</code></td>
+<td>half page up</td>
+</tr>
+<tr class="odd">
+<td><code>H</code></td>
+<td>History Back</td>
+</tr>
+<tr class="even">
+<td><code>L</code></td>
+<td>History Forward</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-operations">File Operations</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;Enter&gt;</code></td>
+<td>Open</td>
+</tr>
+<tr class="even">
+<td><code>r</code></td>
+<td>open file with</td>
+</tr>
+<tr class="odd">
+<td><code>z</code></td>
+<td>toggle settings</td>
+</tr>
+<tr class="even">
+<td><code>o</code></td>
+<td>change sort order</td>
+</tr>
+<tr class="odd">
+<td><code>zh</code></td>
+<td>view hidden files</td>
+</tr>
+<tr class="even">
+<td><code>cw</code></td>
+<td>rename current file</td>
+</tr>
+<tr class="odd">
+<td><code>yy</code></td>
+<td>yank / copy</td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>search for files <code>:search</code></td>
+</tr>
+<tr class="odd">
+<td><code>n</code></td>
+<td>next match</td>
+</tr>
+<tr class="even">
+<td><code>N``| prev match</code><delete>`</td>
+<td>Delete</td>
+</tr>
+</tbody>
+</table>
+<h2 id="commands">Commands</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>:</code></td>
+<td>Execute Range Command</td>
+</tr>
+<tr class="even">
+<td><code>!</code></td>
+<td>Execute Shell Command</td>
+</tr>
+<tr class="odd">
+<td><code>chmod</code></td>
+<td>Change file Permissions</td>
+</tr>
+<tr class="even">
+<td><code>du</code></td>
+<td>Disk Usage Current Directory</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tabs">Tabs</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>C-n</code></td>
+<td>Create new tab</td>
+</tr>
+<tr class="even">
+<td><code>C-w</code></td>
+<td>Close current tab</td>
+</tr>
+<tr class="odd">
+<td>tab</td>
+<td>Next tab</td>
+</tr>
+<tr class="even">
+<td>shift + tab</td>
+<td>Previous tab</td>
+</tr>
+<tr class="odd">
+<td>alt + [n]</td>
+<td>goto / create [n] tab</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-substituting">File substituting</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>%f</code></td>
+<td>Substitute highlighted file</td>
+</tr>
+<tr class="even">
+<td><code>%d</code></td>
+<td>Substitute current directory</td>
+</tr>
+<tr class="odd">
+<td><code>%s</code></td>
+<td>Substitute currently selected files</td>
+</tr>
+<tr class="even">
+<td><code>%t</code></td>
+<td>Substitute currently tagged files</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-for-substitution">Example for substitution</h3>
+<p><code>:bulkrename %s</code></p>
