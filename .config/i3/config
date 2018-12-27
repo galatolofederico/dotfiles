@@ -220,7 +220,7 @@ bar {
         verbose yes
         position top
         status_command i3blocks
-        i3bar_command SCRIPTS_DIR=/home/federico_arch/.config/i3blocks/ i3bar -t
+        i3bar_command SCRIPTS_DIR=~/.config/i3blocks/ i3bar -t
         colors {
           statusline #ffffff
           background $transparent
