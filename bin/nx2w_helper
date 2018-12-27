@@ -1,0 +1,11 @@
+#! /usr/bin/bash
+
+prog=$(xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME | awk -F'"' '{print $2}')
+helper=~/.helpers/$prog/$prog.html
+viewer="elinks"
+
+if [ -f $helper ]; then
+    urxvt -name urxvt-floating -e $viewer $helper
+else
+    notify-send "Helper not found for $prog"
+fi
