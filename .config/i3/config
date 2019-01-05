@@ -6,18 +6,16 @@ set $menu "i3-dmenu-desktop --dmenu='rofi -i -dmenu -font IBM\ Plex\ Sans\ Mediu
 set $run "rofi -show run -modi 'run'"
 
 set $browser chromium
-set $file_explorer "urxvt -hold -e ranger"
+set $file_explorer "urxvt -e ranger"
 set $email_client "thunderbird"
 set $music_player spotify
 set $im telegram-desktop
 
-set $logout "urxvt -hold -name urxvt-floating -e ~/bin/exit_dialog"
-
 # quick settings
 
-set $network_settings "urxvt -hold -name urxvt-floating -e wicd-curses"
-set $audio_settings "urxvt -hold -name urxvt-floating -e ncpamixer"
-set $update "urxvt -hold -name urxvt-floating -e bash -c 'sudo pacman -Syu && yay -Syu'"
+set $network_settings "urxvt -name urxvt-floating -e wicd-curses"
+set $audio_settings "urxvt -name urxvt-floating -e ncpamixer"
+set $update "urxvt -name urxvt-floating -e bash -c 'sudo pacman -Syu && yay -Syu'"
 
 # (no) title bars
 for_window [class="^.*"] border pixel 2
@@ -72,9 +70,6 @@ bindsym $mod+space exec --no-startup-id $menu
 
 # $mod+Shift+space to run $run
 bindsym $mod+Shift+space exec --no-startup-id $run
-
-# $mod+Esc to run logout dialog
-bindsym $mod+Escape exec --no-startup-id $logout
 
 # bind screenshot
 bindsym Print exec --no-startup-id $screenshot
@@ -207,6 +202,21 @@ mode "$mode_settings" {
     bindsym n exec $network_settings; mode "default"
     bindsym a exec $audio_settings; mode "default"
     bindsym u exec $update; mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+# Logout mode
+
+set $mode_logout [s]shutdown [r]reboot [h]hibernate [l]lock screen
+bindsym $mod+Escape mode "$mode_logout"
+
+mode "$mode_logout" {
+    bindsym s exec shutdown -h now; mode "default"
+    bindsym r exec reboot; mode "default"
+    bindsym h exec systemctl suspend ; mode "default"
+    bindsym l exec xscreensaver-command -lock; mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
