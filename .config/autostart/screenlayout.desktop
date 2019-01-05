@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Screenlayout
+Exec=bash -c 'sleep 1 && ~/.screenlayout/default.sh'

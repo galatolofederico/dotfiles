@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Conky
+Exec=bash -c 'sleep 3 && conky'

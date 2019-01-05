@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Background
+Exec=bash -c 'sleep 3 && feh --bg-scale ~/Pictures/Wallpaper.jpg'
