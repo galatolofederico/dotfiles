@@ -7,7 +7,7 @@ fi
 dest=$1
 
 mkdir -p $dest
-for file in $(find .); do
+for file in $(find . -type f -not -path "./.git/*" -not -path "./README.md" -not -path "./LICENSE" ); do
     abs_file=$(echo  $file | cut -c3-)
     if [ -f ~/$abs_file ]; then
         dest_dir=$(dirname $dest/$abs_file)
