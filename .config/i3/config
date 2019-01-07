@@ -216,7 +216,7 @@ mode "$mode_logout" {
     bindsym s exec shutdown -h now; mode "default"
     bindsym r exec reboot; mode "default"
     bindsym h exec systemctl suspend ; mode "default"
-    bindsym l exec xscreensaver-command -lock; mode "default"
+    bindsym l exec i3lock-fancy; mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
