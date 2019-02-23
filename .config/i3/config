@@ -110,11 +110,11 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+# default layout
+workspace_layout tabbed
 
-
-#!GET_VARS
+set $monitor1 eDP1
+set $monitor2 VIRTUAL1
 
 workspace 1 output $monitor1
 workspace 2 output $monitor2
@@ -209,13 +209,13 @@ mode "$mode_settings" {
 
 # Logout mode
 
-set $mode_logout [s]shutdown [r]reboot [h]hibernate [l]lock screen
+set $mode_logout [s]shutdown [r]reboot [u]suspend [l]lock screen 
 bindsym $mod+Escape mode "$mode_logout"
 
 mode "$mode_logout" {
     bindsym s exec shutdown -h now; mode "default"
     bindsym r exec reboot; mode "default"
-    bindsym h exec systemctl suspend ; mode "default"
+    bindsym u exec systemctl suspend ; mode "default"
     bindsym l exec i3lock-fancy; mode "default"
 
     bindsym Escape mode "default"
