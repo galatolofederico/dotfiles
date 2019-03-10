@@ -12,7 +12,23 @@ bind '"\C-f":"\201\C-m"'
 bind '"\202":"cd .."'
 bind '"\C-h":"\202\C-m"'
 
+
+bind -x '"\203":_navigate'
+bind '"\C-n":"\203\C-m"'
+
 bind -x '"\C-l":ls'
+
+function _navigate {
+	while :
+	do
+		file=$(ls -a | fzf)
+		if [ -z $file ] || [ "$file" == "." ]; then
+			break
+		else
+			_handle_file $file
+		fi
+	done
+}
 
 function _handle_file {
     [[ -d $* ]] && cd "$*"
