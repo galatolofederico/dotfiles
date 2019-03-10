@@ -10,8 +10,8 @@ bind -x '"\201":"f"'
 bind '"\C-f":"\201\C-m"'
 
 function _handle_file {
-    [[ -d $1 ]] && cd $1
-    [[ -f $1 ]] && xdg-open $1
+    [[ -d $* ]] && cd "$*"
+    [[ -f $* ]] && xdg-open "$*"
 }
 
 function fastmount {
