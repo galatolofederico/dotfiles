@@ -19,15 +19,15 @@ bind '"\C-n":"\203\C-m"'
 bind -x '"\C-l":ls'
 
 function _navigate {
-	while :
-	do
-		file=$(ls -a | fzf)
-		if [ -z $file ] || [ "$file" == "." ]; then
-			break
-		else
-			_handle_file $file
-		fi
-	done
+    while :
+    do
+    	file=$(ls -a | fzf)
+    	if [ -z $file ] || [ "$file" == "." ]; then
+    		break
+    	else
+    		_handle_file $file
+    	fi
+    done
 }
 
 function _handle_file {
