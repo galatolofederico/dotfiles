@@ -21,12 +21,12 @@ bind -x '"\C-l":ls'
 function _navigate {
     while :
     do
-    	file=$(ls -a | fzf)
-    	if [ -z $file ] || [ "$file" == "." ]; then
-    		break
-    	else
-    		_handle_file $file
-    	fi
+        file=$(ls -a | fzf)
+        if [ -z $file ] || [ "$file" == "." ]; then
+            break
+        else
+            _handle_file $file
+        fi
     done
 }
 
