@@ -1,6 +1,6 @@
 alias copycb="xclip -selection clipboard"
 alias o="xdg-open"
-function f { _handle_file `find . | fzf`; }
+function f { _handle_file xdg-open `find . | fzf`; }
 
 #bind dark magic ahead
 bind -x '"\200":"_handle_file xdg-open `ls -a | fzf`"' #\200 macro for local directory fuzzy finder
