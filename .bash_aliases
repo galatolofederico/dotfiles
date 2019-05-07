@@ -9,9 +9,6 @@ bind '"\C-o":"\200\C-m"' # set C-0 to run \200 and then update the PS1 with C-m
 bind -x '"\201":"f"'
 bind '"\C-f":"\201\C-m"'
 
-bind '"\202":"cd .."'
-bind '"\C-h":"\202\C-m"'
-
 bind -x '"\203":_navigate xdg-open'
 bind '"\C-n":"\203\C-m"'
 
