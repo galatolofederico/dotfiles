@@ -1,0 +1,52 @@
+#! /usr/bin/bash
+
+menu="rofi -dmenu"
+tmpfile="/tmp/tmux_buffer"
+
+function get_line {
+    tac $tmpfile | sed '/^[[:space:]]*$/d' | nl -v 0 | $menu
+}
+
+tmux capture-pane -S -1000
+tmux save-buffer $tmpfile
+tmux delete-buffer
+
+read -n1 mode
+
+case $mode in 
+    "l")
+        line=$(get_line)
+        selection=$(echo $line | cut -d' ' -f2-)
+    ;;
+    "b")
+        line=$(get_line)
+        start_line=$(echo $line | cut -d' ' -f1-1)
+        start_line=$((start_line+1))
+        line=$(get_line)
+        end_line=($(echo $line | cut -d' ' -f1-1) + 1)
+        end_line=$((end_line+1))
+        if [ "$start_line" -gt "$end_line" ]; then
+            app=$start_line
+            start_line=$end_line
+            end_line=$app
+        fi
+        selection=$(tac $tmpfile | sed '/^[[:space:]]*$/d' | sed -n -e "$start_line,$end_line p" -e "$end_line q" | tac)
+    ;;
+    "c")
+        ps1="$(grep "\S" "$tmpfile" | tail -n 1 | cut -d' ' -f1)"
+        chosen="$(grep -F "$ps1" "$tmpfile" | sed '$ d' | tac | $menu | sed 's/[^^]/[&]/g; s/\^/\\^/g')"
+        eps1="$(echo "$ps1" | sed 's/[^^]/[&]/g; s/\^/\\^/g')"
+        selection=$(awk "/^$chosen$/{p=1;print;next} p&&/^$eps1/{p=0};p" "$tmpfile")
+    ;;
+    "f")
+        selection=$(sed 's/.*│//g' $tmpfile | tr -d '\n' | grep -aEo '((http|https)://|www\\.)[a-zA-Z0-9][a-zA-Z0-9./&?=_-]*' | uniq | $menu)
+esac
+
+case "$mode" in
+    l|b|c)
+        echo "$selection" | xclip -selection clipboard
+    ;;
+    f)
+        xdg-open $selection
+    ;;
+esac
