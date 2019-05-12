@@ -8,6 +8,8 @@
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 # load functions
 [ -f ~/.bash_functions ] && source ~/.bash_functions
+# load private aliases
+[ -f ~/.private_aliases ] && source ~/.private_aliases
 
 # env variables
 export EDITOR=vim
