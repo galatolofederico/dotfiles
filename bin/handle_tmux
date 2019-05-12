@@ -40,6 +40,10 @@ case $mode in
     ;;
     "f")
         selection=$(sed 's/.*│//g' $tmpfile | tr -d '\n' | grep -aEo '((http|https)://|www\\.)[a-zA-Z0-9][a-zA-Z0-9./&?=_-]*' | uniq | $menu)
+    ;;
+    "e")
+        $EDITOR /tmp/tmux_buffer
+    ;;
 esac
 
 case "$mode" in
