@@ -1,17 +1,14 @@
 #! /usr/bin/bash
 
 menu="rofi -dmenu"
-tmpfile="/tmp/tmux_buffer"
+tmpfile="/tmp/termbuff"
+mode="$1"
+
+sed -n "w $tmpfile"
 
 function get_line {
     tac $tmpfile | sed '/^[[:space:]]*$/d' | nl -v 0 | $menu
 }
-
-tmux capture-pane -S -1000
-tmux save-buffer $tmpfile
-tmux delete-buffer
-
-read -n1 mode
 
 case $mode in 
     "l")
