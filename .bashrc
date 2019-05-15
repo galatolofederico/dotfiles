@@ -1,7 +1,3 @@
-# tmux
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" && "$TERM" != "linux" ]] && exec tmux
-
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # load aliases
