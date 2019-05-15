@@ -1,0 +1,20 @@
+#! /bin/bash
+
+usage() { echo "Usage: $0 [-s <shape>] <picture>" 1>&2; exit 1; }
+
+shape="256"
+while getopts ":s:h?" o; do
+    case "${o}" in
+        s)
+            shape=${OPTARG}
+            ;;
+        h)
+            usage
+            exit
+            ;;
+    esac
+done
+
+img=${@:$OPTIND:1}
+
+convert $img -resize ${shape}x\> -colors 16 sixel:-;
