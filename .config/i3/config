@@ -1,21 +1,21 @@
 # softwares
-set $terminal urxvt
+set $terminal st
 set $screenshot "escrotum -s -C"
 set $full_screenshot "escrotum ~/Pictures/Screenshots/$(date +%s).png && notify-send 'Screenshot saved'"
 set $menu "i3-dmenu-desktop --dmenu='rofi -i -dmenu -font IBM\ Plex\ Sans\ Medium\ 15'"
 set $run "rofi -show run -modi 'run'"
 
 set $browser chromium
-set $file_explorer "urxvt -e ranger"
+set $file_explorer st -e ranger
 set $email_client "thunderbird"
 set $music_player spotify
 set $im telegram-desktop
 
 # quick settings
 
-set $network_settings "urxvt -name urxvt-floating -e wicd-curses"
-set $audio_settings "urxvt -name urxvt-floating -e ncpamixer"
-set $update "urxvt -name urxvt-floating -e bash -c 'sudo pacman -Syu && yay -Syu'"
+set $network_settings "st -n floating -e wicd-curses"
+set $audio_settings "st -n floating -e ncpamixer"
+set $update "st -n floating -e bash -c 'sudo pacman -Syu && yay -Syu'"
 
 # (no) title bars
 for_window [class="^.*"] border pixel 2
@@ -237,8 +237,8 @@ bar {
         }
 }
 
-# urxvt floating
-for_window [instance="urxvt-floating"] floating enable
+# custom floating windows
+for_window [instance="floating"] floating enable
 
 # signals for caps/num lock for i3blocks
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
