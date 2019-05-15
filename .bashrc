@@ -9,7 +9,7 @@
 
 # env variables
 export EDITOR=vim
-export PATH=$PATH:/home/federico/bin:/home/federico/.local/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 # autocd
 shopt -s autocd
 
