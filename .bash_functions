@@ -1,20 +1,22 @@
 #bind dark magic ahead
-bind -x '"\200":"_handle_file xdg-open `ls -a | fzf`"' #\200 macro for local directory fuzzy finder
-bind '"\C-o":"\200\C-m"' # set C-0 to run \200 and then update the PS1 with C-m
+if [[ $- == *i* ]]; then
+    bind -x '"\200":"_handle_file xdg-open `ls -a | fzf`"' #\200 macro for local directory fuzzy finder
+    bind '"\C-o":"\200\C-m"' # set C-0 to run \200 and then update the PS1 with C-m
 
-bind -x '"\201":"f"'
-bind '"\C-f":"\201\C-m"'
+    bind -x '"\201":"f"'
+    bind '"\C-f":"\201\C-m"'
 
-bind -x '"\203":_navigate xdg-open'
-bind '"\C-n":"\203\C-m"'
+    bind -x '"\203":_navigate xdg-open'
+    bind '"\C-n":"\203\C-m"'
 
-bind -x '"\204":_navigate vim'
-bind '"\C-e":"\204\C-m"'
+    bind -x '"\204":_navigate vim'
+    bind '"\C-e":"\204\C-m"'
 
-bind -x '"\C-l":ls'
+    bind -x '"\C-l":ls'
 
-# Ctrl + Backspace = cut backwards to the start of the current word
-bind '"\C-h":"\C-w"'
+    # Ctrl + Backspace = cut backwards to the start of the current word
+    bind '"\C-h":"\C-w"'
+fi
 
 function _navigate {
     while :
