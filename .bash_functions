@@ -13,6 +13,9 @@ bind '"\C-e":"\204\C-m"'
 
 bind -x '"\C-l":ls'
 
+# Ctrl + Backspace = cut backwards to the start of the current word
+bind '"\C-h":"\C-w"'
+
 function _navigate {
     while :
     do
