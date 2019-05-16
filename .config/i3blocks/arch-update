@@ -125,4 +125,4 @@ elif not args.quiet:
 
 
 if "BLOCK_BUTTON" in os.environ and os.environ["BLOCK_BUTTON"] != "":
-    os.system("urxvt -hold -name urxvt-floating -e bash -c 'sudo pacman -Syu && yay -Syu'")
+    os.system("st -n floating -e bash -c 'sudo pacman -Syu && yay -Syu'")
