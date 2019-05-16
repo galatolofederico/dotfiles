@@ -11,9 +11,6 @@ bind '"\C-n":"\203\C-m"'
 bind -x '"\204":_navigate vim'
 bind '"\C-e":"\204\C-m"'
 
-bind -x '"\205":"bash -c $HOME/bin/handle_tmux"'
-bind '"\C-h":"\205\C-m"'
-
 bind -x '"\C-l":ls'
 
 function _navigate {
