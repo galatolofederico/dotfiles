@@ -15,7 +15,7 @@ export EDITOR=vim
 export TERMINAL=st
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
-# save last direcotry
+# save last directory
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 
 # autocd
