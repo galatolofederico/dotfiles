@@ -8,7 +8,7 @@
 [ -f ~/.private_aliases ] && source ~/.private_aliases
 
 # cd into last directory
-cd $(cat /tmp/whereami)
+[ -f /tmp/whereami ] && cd $(cat /tmp/whereami)
 
 # env variables
 export EDITOR=vim
