@@ -1,6 +1,6 @@
 #! /usr/bin/bash
-DIR=~/.config/templates
+DIR=~/.config/templates/
 file=$(ls $DIR | fzf)
-if [ ! -z $file ] && [ "$file" != "." ]; then
-    cat $DIR/$file | xclip -selection clipboard
+if [ ! -z "$file" ] && [ "$file" != "." ]; then
+    cat "$DIR/$file" | xclip -selection clipboard
 fi
