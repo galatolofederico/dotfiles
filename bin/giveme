@@ -1,0 +1,6 @@
+#! /usr/bin/bash
+if [[ ! -z $2 ]]; then
+    cat $TEMPLATES_DIR/$1 | sed s/\<\+\+\>/$2/g | xclip -selection clipboard 
+else
+    cat $TEMPLATES_DIR/$1 | xclip -selection clipboard 
+fi

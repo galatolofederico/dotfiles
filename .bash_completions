@@ -1,0 +1,7 @@
+#/usr/bin/env bash
+
+_giveme_completions() {
+    COMPREPLY=$(ls $TEMPLATES_DIR | fzf )
+}
+
+complete -F _giveme_completions giveme

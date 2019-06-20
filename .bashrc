@@ -6,6 +6,8 @@
 [ -f ~/.bash_functions ] && source ~/.bash_functions
 # load private aliases
 [ -f ~/.private_aliases ] && source ~/.private_aliases
+# load completions
+[ -f ~/.bash_completions ] && source ~/.bash_completions
 
 # cd into last directory
 [ -f /tmp/whereami ] && cd $(cat /tmp/whereami)
@@ -14,6 +16,7 @@
 export EDITOR=vim
 export TERMINAL=st
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export TEMPLATES_DIR=~/.config/templates/
 
 # save last directory
 export PROMPT_COMMAND="pwd > /tmp/whereami"
