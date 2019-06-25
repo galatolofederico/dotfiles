@@ -45,13 +45,13 @@ set $darkcyan    #689d6a
 set $white       #ebdbb2
 set $darkwhite   #a89984
 set $background  #000000
-set $transparent #00000000
+set $transparent #00000040
 
 # font
 font xft:DejaVuSansMono Nerd Font:style=Book
 
 # helper script
-bindsym $mod+Tab exec --no-startup-id ~/bin/nx2w_helper
+#bindsym $mod+Tab exec --no-startup-id ~/bin/nx2w_helper
 
 # windows button
 set $mod Mod4
