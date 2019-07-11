@@ -1,6 +1,7 @@
 # softwares
 set $terminal st
 set $screenshot "escrotum -s -C"
+set $sel_screenshot "escrotum -s /tmp/$(date +%s).png | xclip -selection clipboard && notify-send 'Filename copied to clipboard'"
 set $full_screenshot "escrotum ~/Pictures/Screenshots/$(date +%s).png && notify-send 'Screenshot saved'"
 set $menu "i3-dmenu-desktop --dmenu='rofi -i -dmenu -font IBM\ Plex\ Sans\ Medium\ 15'"
 set $run "rofi -show run -modi 'run'"
@@ -74,6 +75,7 @@ bindsym $mod+Shift+space exec --no-startup-id $run
 # bind screenshot
 bindsym Print exec --no-startup-id $screenshot
 bindsym Shift+Print exec --no-startup-id $full_screenshot
+bindsym Control+Print exec --no-startup-id $sel_screenshot
 
 # arrow keys to change focus
 bindsym $mod+Left focus left
