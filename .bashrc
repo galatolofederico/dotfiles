@@ -10,7 +10,8 @@
 [ -f ~/.bash_completions ] && source ~/.bash_completions
 
 # cd into last directory
-[ -f /tmp/whereami ] && cd $(cat /tmp/whereami)
+WHEREAMI="/tmp/whereami_$(whoami)"
+[ -f $WHEREAMI ] && cd $(cat $WHEREAMI)
 
 # env variables
 export EDITOR=vim
@@ -19,7 +20,7 @@ export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 export TEMPLATES_DIR=~/.config/templates/
 
 # save last directory
-export PROMPT_COMMAND="pwd > /tmp/whereami"
+export PROMPT_COMMAND="pwd > $WHEREAMI"
 
 # autocd
 shopt -s autocd
