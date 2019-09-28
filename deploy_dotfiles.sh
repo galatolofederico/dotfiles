@@ -25,10 +25,11 @@ for file in $(find . -type f -not -path "./.git/*" -not -path "./README.md" -not
     fdiff=$?
     if [ "$fdiff" -gt "0" ]; then
         printf "Overwrite ~/${abs_file}? (y/n)"
-        read -n1 ans
+        [ "$FORCE" -eq "0" ] && read -n1 ans
         printf "\n"
         if [ "$FORCE" -gt "0" ] || [ "$ans" == "y" ]; then
             cp ./$abs_file ~/$abs_file
+            echo "$abs_file copied!"
         fi
     fi
 done
