@@ -1,0 +1,9 @@
+[submodule ".dwm"]
+	path = .dwm
+	url = https://github.com/galatolofederico/dwm.git
+[submodule ".st"]
+	path = .st
+	url = https://github.com/galatolofederico/st-sixel.git
+[submodule ".pso"]
+	path = .pso
+	url = https://github.com/galatolofederico/pso.git
