@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=dwm-bar
-Exec=bash -c '~/GitHub/dwm-bar/dwm_bar.sh' &
+Exec=bash -c '~/.config/dwm-bar/dwm_bar.sh' &
 StartupWMClass="dwm"
