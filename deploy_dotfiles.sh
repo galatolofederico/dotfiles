@@ -17,7 +17,7 @@ done
 shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 
-for file in $(find . -type f -not -path "./.git/*" -not -path "./README.md" -not -path "./LICENSE" -not -path "./deploy_dotfiles.sh" -not -path "./backup_old_dotfiles.sh" ); do
+for file in $(find . -type f -not -path "./.git/*" -not -path "./README.md" -not -path "./LICENSE" -not -path "./deploy_dotfiles.sh" -not -path "./backup_old_dotfiles.sh" -not -path './.dwm/*' -not -path './.pso/*' -not -path './.st/*' -not -path './.gitmodules'  -not -path './README.md.d/*'); do
     abs_file=$(echo  $file | cut -c3-)
     dest_dir=$(dirname ~/$abs_file)
     mkdir -p -- $dest_dir
