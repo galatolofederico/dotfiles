@@ -1,0 +1,4 @@
+shutdown,shutdown -h now
+reboot,reboot
+suspend,systemctl suspend
+lock,i3lock-fancy
