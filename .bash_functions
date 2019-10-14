@@ -9,9 +9,6 @@ if [[ $- == *i* ]]; then
     bind -x '"\203":_navigate xdg-open'
     bind '"\C-n":"\203\C-m"'
 
-    bind -x '"\204":_navigate vim'
-    bind '"\C-e":"\204\C-m"'
-
     bind -x '"\C-l":ls'
 
     # Ctrl + Backspace = cut backwards to the start of the current word
