@@ -10,6 +10,21 @@
 # It is recommended that you place functions in the subdirectory ./bar-functions and use: . "$DIR/bar-functions/dwm_example.sh"
 
 # Store the directory the script is running from
+
+# Script lock
+lockfile=/tmp/dwmbar_lock_$(whoami)$DISPLAY
+
+function unlock {
+	rm $lockfile
+	exit
+}
+trap unlock SIGTERM SIGKILL SIGINT
+
+if [ -f $lockfile ]; then
+	exit
+fi
+touch $lockfile
+
 LOC=$(readlink -f "$0")
 DIR=$(dirname "$LOC")
 
