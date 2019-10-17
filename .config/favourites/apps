@@ -3,5 +3,5 @@ files,st -e ranger
 email,thunderbird
 music,spotify
 im,telegram-desktop
-calendar,sfc_spawn chromium --new-window https://calendar.google.com
-github,sfc_spawn chromium --new-window https://github.com/galatolofederico
+calendar,~/bin/sfc_spawn chromium --new-window https://calendar.google.com
+github,~/bin/sfc_spawn chromium --new-window https://github.com/galatolofederico
