@@ -16,7 +16,7 @@ WHEREAMI="/tmp/whereami_$(whoami)"
 # env variables
 export EDITOR=vim
 export TERMINAL=st
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/opt/pso
 export TEMPLATES_DIR=~/.config/templates/
 
 # save last directory
