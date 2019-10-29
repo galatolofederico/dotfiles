@@ -1,4 +1,4 @@
 #!/bin/sh
 
 choice=$(cat $1 | awk '{split($0,s,","); print s[1]}' | dmenu)
-exec $(cat $1 | grep $choice | awk '{split($0,s,","); print s[2]}')
+eval $(cat $1 | grep $choice | awk '{split($0,s,","); print s[2]}')
