@@ -52,8 +52,9 @@ do
 	dwm_backlight=$(dwm_backlight)
 	dwm_pulse=$(dwm_pulse)
 	dwm_network=$(dwm_network)
-    dwm_date=$(dwm_date)
+        dwm_date=$(dwm_date)
 	if [ $((i % 60)) -eq 0 ]; then dwm_updates=$(dwm_updates); fi
 	xsetroot -name "$dwm_battery$dwm_updates$dwm_backlight$dwm_pulse$dwm_network$dwm_date"
-    sleep 1
+        i=$((i+1))
+        sleep 1
 done
