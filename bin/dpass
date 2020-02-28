@@ -1,0 +1,7 @@
+#!/bin/sh
+
+promptfg=black
+promptbg=red
+hidden=black
+
+dmenu -p "$1" -nf "$hidden" -nb "$hidden" -sf "$promptfg" -sb "$promptbg" <&-
