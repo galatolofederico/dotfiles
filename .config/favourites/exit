@@ -1,4 +1,5 @@
 lock,i3lock-fancy
+cleanlock,~/bin/clean-lock
 shutdown,shutdown -h now
 reboot,reboot
 suspend,systemctl suspend
