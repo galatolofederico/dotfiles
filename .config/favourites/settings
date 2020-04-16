@@ -1,3 +1,3 @@
 network,st -n floating -e wicd-curses
-audio,st -n floating -e ncpamixer
+audio,~/bin/sfc_spawn pavucontrol
 update,st -n floating -e bash -c 'sudo pacman -Syu && yay -Syu'
