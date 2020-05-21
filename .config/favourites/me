@@ -1,0 +1,6 @@
+name,/bin/sh -c 'echo -n "Federico Galatolo" | xclip -selection c'
+fullname,/bin/sh -c 'echo -n "Federico Andrea Galatolo" | xclip -selection c'
+private_email,/bin/sh -c 'echo -n "galatolo.federico@gmail.com" | xclip -selection c'
+unipi_email,/bin/sh -c 'echo -n "federico.galatolo@ing.unipi.it" | xclip -selection c'
+phone_prefix,/bin/sh -c 'echo -n "+393939592790" | xclip -selection c'
+phone,/bin/sh -c 'echo -n "3939592790" | xclip -selection c
