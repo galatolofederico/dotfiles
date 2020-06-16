@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$#" -ne 1 ]; then
+    if [ "$1" != "on" ] || [ "$1" != "off" ]; then
+		echo "swallow on/off"
+		exit 1
+	fi
+fi
+
+pid=$(pgrep -u $(whoami) -x dwm)
+[ "$1" = "on"  ] && dwm-msg $pid swallow
+[ "$1" = "off" ] && dwm-msg $pid noswallow
