@@ -42,9 +42,13 @@ set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
+set mouse=a
 
 " custom maps
 let mapleader = " "
+
+nnoremap <leader>p :tabp<CR>
+nnoremap <leader>n :tabn<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
