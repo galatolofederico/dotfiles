@@ -25,7 +25,7 @@ case "$1" in
     fi
     ;;
   "")
-    bash $0 list | dmenu -p 'Emoji: ' -l 5 | bash $0 copy | bash $0 type
+    bash $0 list | dmenu -fn 'DejaVuSansMono Nerd Font' -p 'Emoji: ' -l 5 | bash $0 copy | bash $0 type
     ;;
 esac
 
