@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Background
+Exec=st -t windowwallpaper -e bpytop
