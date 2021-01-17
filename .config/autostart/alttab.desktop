@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=alttab
-Exec=alttab -mk 0xffeb  -font "xft:DejaVuSansMono Nerd Font:style=Book:size=16" -fg "#d58681" -bg "#4a4a4a" -t 128x150 -i 127x64

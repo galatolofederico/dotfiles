@@ -32,5 +32,5 @@ fi
 
 export PATH=/home/federico_arch/GitHub/pso:$PATH
 
-dex -ae dwm
-exec dwm
+dex -a
+startxfce4

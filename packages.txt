@@ -24,7 +24,7 @@ fontconfig
 
 aur:
 
-dex
+dexw
 fluxgui
 libxf-bgra
 nerd-fonts-complete
