@@ -32,5 +32,4 @@ fi
 
 export PATH=/home/federico_arch/GitHub/pso:$PATH
 
-dex -a
 startxfce4
