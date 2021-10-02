@@ -1,4 +1,0 @@
-#!/bin/sh
-pid=$(pgrep -u $(whoami) -x dwm)
-dwm-msg $pid next_sfc
-$@

@@ -1,7 +1,6 @@
-browser,brave
-files,st -e ranger
+browser,firefox
+files,thunar
 email,thunderbird
 music,spotify
 im,telegram-desktop
-calendar,~/bin/sfc_spawn brave --new-window https://calendar.google.com
-github,~/bin/sfc_spawn brave --new-window https://github.com/galatolofederico
+calendar,firefox --new-window https://calendar.google.com

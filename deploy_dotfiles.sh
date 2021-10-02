@@ -1,35 +1,49 @@
-function show_help {
-    echo -e "Usage: ./deploy_dotfiles.sh [-f] [-h]\n-h\tShow help\n-f\tBlindly copy all files"
-}
+#!/bin/bash
 
-FORCE=0
-while getopts "h?f?:" opt; do
-    case "$opt" in
-    h|\?)
-        show_help
-        exit 0
-        ;;
-    f)  FORCE=1
-        ;;
-    esac
-done
 
-shift $((OPTIND-1))
-[ "${1:-}" = "--" ] && shift
+RESOURCES=(
+bin
+.config/favourites
+.config/fontconfig
+.config/gtk-3.0
+.config/xfce4
+.bash_aliases
+.bash_completions
+.bash_functions
+.bash_profile
+.bashrc
+.compton.conf
+.conkyrc
+.gtkrc-2.0
+.vimrc
+.xinitrc
+)
 
-for file in $(find . -type f -not -path "./.git/*" -not -path "./README.md" -not -path "./LICENSE" -not -path "./deploy_dotfiles.sh" -not -path "./backup_old_dotfiles.sh" -not -path './.dwm/*' -not -path './.pso/*' -not -path './.st/*' -not -path './.gitmodules'  -not -path './README.md.d/*' -not -path './packages.txt'); do
-    abs_file=$(echo  $file | cut -c3-)
-    dest_dir=$(dirname ~/$abs_file)
-    mkdir -p -- $dest_dir
-    diff --color ./$abs_file ~/$abs_file
-    fdiff=$?
-    if [ "$fdiff" -gt "0" ]; then
-        printf "Overwrite ~/${abs_file}? (y/n)"
-        [ "$FORCE" -eq "0" ] && read -n1 ans
-        printf "\n"
-        if [ "$FORCE" -gt "0" ] || [ "$ans" == "y" ]; then
-            cp ./$abs_file ~/$abs_file
-            echo "$abs_file copied!"
-        fi
+
+TARGET=~
+if [ "$#" -eq 1 ]; then
+    TARGET=$1
+fi
+[ ! -d ./backups ] && mkdir ./backups
+BACKUP="./backups/$(date '+%s')"
+
+echo "[!] Using $TARGET as target folder"
+echo "[!] Using $BACKUP as backup folder (if needed)"
+
+[ ! -d "$TARGET/.config" ] && mkdir "$TARGET/.config"
+for resource in "${RESOURCES[@]}"; do
+    if [ -f "$TARGET/$resource" ] || [ -d "$TARGET/$resource" ]; then
+        [ ! -d "$BACKUP" ] && mkdir "$BACKUP"
+        [ ! -d "$BACKUP/.config" ] && mkdir "$BACKUP/.config"
+        
+        cp -r "$TARGET/$resource" "$BACKUP/$resource"
+        echo "[*] Saved backup for '$TARGET/$resource'"
+        del="$TARGET/$resource"
+        rm -rf "${del:?}"
+        echo "[*] Deleted '$del'"
     fi
+    ln -s "$(pwd)/$resource" "$TARGET/$resource"
+    echo "[*] Created symlink to $TARGET/$resource"
 done
+
+

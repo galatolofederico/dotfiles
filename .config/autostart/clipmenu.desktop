@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Clipmenu Daemon
-Exec=env CM_SELECTIONS=clipboard clipmenud

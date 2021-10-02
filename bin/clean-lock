@@ -1,6 +1,0 @@
-#! /bin/sh
-
-clipdel -d ".*"
-rm /tmp/bw_session
-
-i3lock-fancy

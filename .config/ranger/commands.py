@@ -1,2 +1,0 @@
-from custom_commands.compress import compress
-from custom_commands.extract import extracthere

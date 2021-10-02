@@ -26,6 +26,12 @@ map <C-n> :NERDTreeToggle<CR>
 colorscheme gruvbox
 set background=dark
 
+" YCM conf
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+set completeopt-=preview
+
+
 " conf
 set nocompatible
 filetype plugin on

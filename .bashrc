@@ -8,19 +8,14 @@
 [ -f ~/.private_aliases ] && source ~/.private_aliases
 # load completions
 [ -f ~/.bash_completions ] && source ~/.bash_completions
-
-# cd into last directory
-WHEREAMI="/tmp/whereami_$(whoami)"
-[ -f $WHEREAMI ] && cd $(cat $WHEREAMI)
+# load custom stuff
+[ -f ~/.bash_custom ] && source ~/.bash_custom
 
 # env variables
 export EDITOR=vim
 export TERMINAL=st
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.local/opt/pso
 export TEMPLATES_DIR=~/.config/templates/
-
-# save last directory
-export PROMPT_COMMAND="pwd > $WHEREAMI"
 
 # autocd
 shopt -s autocd

@@ -1,0 +1,6 @@
+#/bin/sh
+
+rm /tmp/bw_session
+bw login
+BW_SESSION=$(bw unlock --raw)
+bw sync
