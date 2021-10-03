@@ -1,4 +1,4 @@
-browser,firefox
+browser,firefox -P
 files,thunar
 email,thunderbird
 music,spotify

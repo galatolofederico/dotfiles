@@ -56,6 +56,7 @@
       <property name="&lt;Super&gt;space" type="string" value="j4-dmenu-desktop"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;p" type="string" value="/bin/sh -c &quot;~/bin/bitwarden_dmenu&quot;"/>
       <property name="&lt;Super&gt;v" type="string" value="clipmenu"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;m" type="string" value="/bin/sh -c &quot; ~/bin/dmenu_favourites ~/.config/favourites/me&quot;"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
