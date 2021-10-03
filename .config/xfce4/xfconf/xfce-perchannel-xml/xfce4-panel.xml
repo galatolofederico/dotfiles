@@ -67,6 +67,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="notes"/>
         <value type="string" value="javaembeddedframe"/>
         <value type="string" value="obs"/>
         <value type="string" value="clipit"/>
