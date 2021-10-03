@@ -4,3 +4,4 @@ email,thunderbird
 music,spotify
 im,telegram-desktop
 calendar,firefox --new-window https://calendar.google.com
+password-manager,bitwarden-desktop
