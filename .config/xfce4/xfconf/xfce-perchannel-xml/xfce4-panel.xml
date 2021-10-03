@@ -113,5 +113,10 @@
       </property>
     </property>
     <property name="plugin-1" type="string" value="genmon"/>
+    <property name="notes" type="empty">
+      <property name="new-window" type="empty">
+        <property name="always-on-top" type="bool" value="true"/>
+      </property>
+    </property>
   </property>
 </channel>
