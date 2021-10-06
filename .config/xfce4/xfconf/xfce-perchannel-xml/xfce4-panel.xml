@@ -17,6 +17,7 @@
         <value type="int" value="3"/>
         <value type="int" value="1"/>
         <value type="int" value="5"/>
+        <value type="int" value="2"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
         <value type="int" value="9"/>
@@ -90,7 +91,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1045;chromium.instance1259;chromium.instance1308;chromium.instance13412;chromium.instance1366;chromium.instance62057;chromium.instance69962;chromium.instance72764;chromium.instance75145;chromium.instance82670;chromium.instance94992;chromium.instance95642;firefox.instance1348;firefox.instance1922;firefox.instance1975;firefox.instance2381;firefox.instance257614;firefox.instance2646;firefox.instance2808;firefox.instance3129;firefox.instance3733;firefox.instance3874;firefox.instance428496;firefox.instance4674;firefox.instance5111;firefox.instance6350;spotify;tdesktop;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1045;chromium.instance1259;chromium.instance1308;chromium.instance13412;chromium.instance1366;chromium.instance62057;chromium.instance69962;chromium.instance72764;chromium.instance75145;chromium.instance82670;chromium.instance94992;chromium.instance95642;firefox.instance1348;firefox.instance15736;firefox.instance1868;firefox.instance1922;firefox.instance1975;firefox.instance2381;firefox.instance257614;firefox.instance2646;firefox.instance2808;firefox.instance3129;firefox.instance3733;firefox.instance3874;firefox.instance428496;firefox.instance4674;firefox.instance5111;firefox.instance5902;firefox.instance6350;spotify;tdesktop;vlc"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -118,5 +119,6 @@
         <property name="always-on-top" type="bool" value="true"/>
       </property>
     </property>
+    <property name="plugin-2" type="string" value="xfce4-notes-plugin"/>
   </property>
 </channel>
