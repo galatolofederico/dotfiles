@@ -40,7 +40,7 @@ color4 E3D1A4
 color5 CC2222
 
 TEXT
-${color grey}SYSTEM ${hr 3}${color}
+${color grey}SYSTEM ${hr 1}${color}
 
 Hostname: $alignr$nodename
 Kernel: $alignr$kernel
@@ -63,9 +63,11 @@ swap ${alignr}$swap / $swapmax ($swapperc%)
 ${swapbar 8}
 
 ${color grey}CITATIONS ${hr 1}${color}
+
 Name: $alignr ${execi 10 jq -r .name ~/.cache/scholar.json}
 Citations: $alignr ${execi 10 jq -r .citedby ~/.cache/scholar.json}
 h-index: $alignr ${execi 10 jq -r .hindex ~/.cache/scholar.json}
+Last Update: $alignr ${execi 10 jq -r .last_update ~/.cache/scholar.json}
 
 ${color grey}MOST CITED PAPERS ${hr 1}${color}
 ${execi 3600 ~/bin/scholar-stats.py}
