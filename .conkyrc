@@ -1,4 +1,4 @@
-xftfont DejaVuSansMono Nerd Font:style=Book:size=8.5
+xftfont DejaVuSansMono Nerd Font:style=Book:size=11
 use_xft yes
 xftalpha 0.9
 update_interval 1.0
@@ -7,7 +7,7 @@ total_run_times 0
 background yes
 own_window yes
 own_window_argb_visual yes
-own_window_type override
+own_window_type normal
 ow_window_class Conky
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
@@ -22,8 +22,8 @@ default_color white
 default_shade_color black
 default_outline_color green
 alignment top_right
-gap_x 12
-gap_y 28
+gap_x 10
+gap_y 50
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -61,6 +61,18 @@ Ram ${alignr}$mem / $memmax ($memperc%)
 ${membar 8}
 swap ${alignr}$swap / $swapmax ($swapperc%)
 ${swapbar 8}
+
+${color grey}CITATIONS ${hr 1}${color}
+Name: $alignr ${execi 10 jq -r .name ~/.cache/scholar.json}
+Citations: $alignr ${execi 10 jq -r .citedby ~/.cache/scholar.json}
+h-index: $alignr ${execi 10 jq -r .hindex ~/.cache/scholar.json}
+
+${color grey}MOST CITED PAPERS ${hr 1}${color}
+${execi 3600 ~/bin/scholar-stats.py}
+title $alignr citations
+${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[0] | .bib.title" ~/.cache/scholar.json  | cut -d ' ' -f1-4 | tr -d "\n" | xargs -0 printf "%s ..."}$alignr ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[0] | .num_citations " ~/.cache/scholar.json}
+${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[1] | .bib.title" ~/.cache/scholar.json  | cut -d ' ' -f1-4 | tr -d "\n" | xargs -0 printf "%s ..."}$alignr ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[1] | .num_citations " ~/.cache/scholar.json}
+${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[2] | .bib.title" ~/.cache/scholar.json  | cut -d ' ' -f1-4 | tr -d "\n" | xargs -0 printf "%s ..."}$alignr ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[2] | .num_citations " ~/.cache/scholar.json}
 
 ${color grey}PROCESSES ${hr 1}${color}
 
