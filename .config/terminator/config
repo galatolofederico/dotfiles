@@ -2,6 +2,8 @@
   title_hide_sizetext = True
   title_font = DejaVuSansMono Nerd Font 20
 [keybindings]
+  split_horiz = <Alt>minus
+  split_vert = <Alt>plus
 [profiles]
   [[default]]
     background_color = "#282828"
