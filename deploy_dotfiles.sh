@@ -7,6 +7,7 @@ bin
 .config/fontconfig
 .config/gtk-3.0
 .config/xfce4
+.config/terminator
 .bash_aliases
 .bash_completions
 .bash_functions
