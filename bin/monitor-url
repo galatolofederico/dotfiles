@@ -17,7 +17,7 @@ FILE_OLD=$(mktemp)
 rm "$FILE_NEW"
 rm "$FILE_OLD"
 
-telegram-notify --warning --text "Now monitoring $URL whit intervall $INTERVALL"
+telegram-notify --warning --text "Now monitoring $URL with intervall $INTERVALL"
 while true; do
     if [ -f "$FILE_NEW" ]; then
         mv "$FILE_NEW" "$FILE_OLD"
@@ -27,6 +27,7 @@ while true; do
         if cmp -s "$FILE_NEW" "$FILE_OLD"; then
             echo "No changes"
         else
+            echo "Changes detected!"
             telegram-notify --success --text "$URL has changed"
        fi
     fi
