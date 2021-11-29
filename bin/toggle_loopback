@@ -4,6 +4,11 @@ source="system:capture_1"
 target_left="system:playback_1"
 target_right="system:playback_2"
 
+if ! pgrep jackd; then
+    notify-send "Starting jack server" -t 3000
+    sh $HOME/bin/start_jack_pulse.sh
+fi
+
 if jack_connect $source $target_left 2> /dev/null; then
     jack_connect $source $target_right; 
 else
