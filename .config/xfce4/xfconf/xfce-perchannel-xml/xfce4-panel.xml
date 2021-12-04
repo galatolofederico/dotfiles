@@ -16,6 +16,7 @@
         <value type="int" value="4"/>
         <value type="int" value="3"/>
         <value type="int" value="1"/>
+        <value type="int" value="15"/>
         <value type="int" value="5"/>
         <value type="int" value="2"/>
         <value type="int" value="6"/>
@@ -68,6 +69,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="caja"/>
         <value type="string" value="notes"/>
         <value type="string" value="javaembeddedframe"/>
         <value type="string" value="obs"/>
@@ -79,6 +81,12 @@
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="flameshot"/>
+        <value type="string" value="Nextcloud"/>
+        <value type="string" value="Skype1"/>
+        <value type="string" value="ProtonMail Bridge"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="Microsoft Teams - Preview1"/>
         <value type="string" value="fluxgui-indicator"/>
         <value type="string" value="Bitwarden1"/>
         <value type="string" value="SimpleScreenRecorder"/>
@@ -91,7 +99,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1045;chromium.instance1259;chromium.instance1308;chromium.instance13412;chromium.instance1366;chromium.instance62057;chromium.instance69962;chromium.instance72764;chromium.instance75145;chromium.instance82670;chromium.instance94992;chromium.instance95642;firefox.instance1348;firefox.instance1434;firefox.instance15736;firefox.instance1868;firefox.instance1922;firefox.instance1975;firefox.instance2381;firefox.instance257614;firefox.instance2646;firefox.instance2808;firefox.instance3129;firefox.instance3733;firefox.instance3874;firefox.instance428496;firefox.instance4674;firefox.instance5111;firefox.instance5902;firefox.instance6350;spotify;tdesktop;vlc"/>
+      <property name="mpris-players" type="string" value="chromium.instance1045;chromium.instance1259;chromium.instance1308;chromium.instance13412;chromium.instance1366;chromium.instance21058;chromium.instance62057;chromium.instance66105;chromium.instance69962;chromium.instance72764;chromium.instance74860;chromium.instance75145;chromium.instance82670;chromium.instance94992;chromium.instance95642;chromium.instance99488;firefox.instance11366;firefox.instance1153;firefox.instance1157;firefox.instance1162;firefox.instance1171;firefox.instance118336;firefox.instance1233;firefox.instance12368;firefox.instance1348;firefox.instance140055;firefox.instance1434;firefox.instance144428;firefox.instance1484;firefox.instance1494;firefox.instance1556;firefox.instance15736;firefox.instance1611;firefox.instance1626;firefox.instance1631;firefox.instance1639;firefox.instance1673;firefox.instance1675;firefox.instance1700;firefox.instance1736;firefox.instance1742;firefox.instance1746;firefox.instance1775;firefox.instance1841;firefox.instance1868;firefox.instance1922;firefox.instance194861;firefox.instance1975;firefox.instance1980;firefox.instance19884;firefox.instance2001;firefox.instance2089;firefox.instance215236;firefox.instance2180;firefox.instance2210;firefox.instance2231;firefox.instance2297;firefox.instance2353;firefox.instance2381;firefox.instance257614;firefox.instance2626;firefox.instance2646;firefox.instance2672;firefox.instance2808;firefox.instance3102;firefox.instance3129;firefox.instance3205;firefox.instance34090;firefox.instance36205;firefox.instance3640;firefox.instance3733;firefox.instance3874;firefox.instance4093;firefox.instance428496;firefox.instance43250;firefox.instance4674;firefox.instance46925;firefox.instance5111;firefox.instance5392;firefox.instance5566;firefox.instance5902;firefox.instance6350;firefox.instance64063;firefox.instance6702;firefox.instance67628;firefox.instance68122;firefox.instance68630;firefox.instance7697;firefox.instance82022;firefox.instance967458;firefox.instance97984;spotify;tdesktop;vlc"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -120,5 +128,40 @@
       </property>
     </property>
     <property name="plugin-2" type="string" value="xfce4-notes-plugin"/>
+    <property name="plugin-15" type="string" value="weather">
+      <property name="location" type="empty">
+        <property name="name" type="string" value="Vicopisano, Pisa"/>
+        <property name="latitude" type="string" value="43.699832"/>
+        <property name="longitude" type="string" value="10.584695"/>
+      </property>
+      <property name="msl" type="int" value="22"/>
+      <property name="timezone" type="string" value="Europe/Rome"/>
+      <property name="offset" type="string" value="+01:00"/>
+      <property name="cache-max-age" type="int" value="172800"/>
+      <property name="power-saving" type="bool" value="true"/>
+      <property name="units" type="empty">
+        <property name="temperature" type="int" value="0"/>
+        <property name="pressure" type="int" value="0"/>
+        <property name="windspeed" type="int" value="0"/>
+        <property name="precipitation" type="int" value="0"/>
+        <property name="altitude" type="int" value="0"/>
+        <property name="apparent-temperature" type="int" value="0"/>
+      </property>
+      <property name="round" type="bool" value="true"/>
+      <property name="single-row" type="bool" value="true"/>
+      <property name="tooltip-style" type="int" value="1"/>
+      <property name="forecast" type="empty">
+        <property name="layout" type="int" value="1"/>
+        <property name="days" type="int" value="5"/>
+      </property>
+      <property name="theme-dir" type="string" value="/usr/share/xfce4/weather/icons/liquid"/>
+      <property name="scrollbox" type="empty">
+        <property name="show" type="bool" value="true"/>
+        <property name="animate" type="bool" value="true"/>
+        <property name="lines" type="int" value="1"/>
+        <property name="color" type="string" value="rgba(0,0,0,0)"/>
+        <property name="use-color" type="bool" value="false"/>
+      </property>
+    </property>
   </property>
 </channel>

@@ -65,6 +65,7 @@ ${swapbar 8}
 ${color grey}CITATIONS ${hr 1}${color}
 
 Name: $alignr ${execi 10 jq -r .name ~/.cache/scholar.json}
+Publications: $alignr ${execi 10 jq -r ".publications | length" ~/.cache/scholar.json}
 Citations: $alignr ${execi 10 jq -r .citedby ~/.cache/scholar.json}
 h-index: $alignr ${execi 10 jq -r .hindex ~/.cache/scholar.json}
 Last Update: $alignr ${execi 10 jq -r .last_update ~/.cache/scholar.json}

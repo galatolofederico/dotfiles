@@ -1,6 +1,6 @@
 app=sxiv
 last_user=
-screenshot_dir=file:/home/federico
+screenshot_dir=file:/home/federico/Pictures/Screenshots
 action=2
 delay=0
 region=3

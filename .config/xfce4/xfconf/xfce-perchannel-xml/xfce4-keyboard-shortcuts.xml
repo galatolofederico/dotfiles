@@ -34,16 +34,13 @@
       <property name="&lt;Alt&gt;F2" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="&lt;Alt&gt;Print" type="string" value="xfce4-screenshooter -w"/>
       <property name="&lt;Super&gt;r" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
       <property name="&lt;Alt&gt;F3" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="Print" type="string" value="xfce4-screenshooter"/>
       <property name="&lt;Primary&gt;Escape" type="string" value="xfdesktop --menu"/>
-      <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Delete" type="string" value="xfce4-session-logout"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="xfce4-taskmanager"/>
@@ -52,11 +49,12 @@
       <property name="&lt;Super&gt;s" type="string" value="/bin/sh -c &quot; ~/bin/dmenu_favourites ~/.config/favourites/settings&quot;"/>
       <property name="&lt;Super&gt;o" type="string" value="/bin/sh -c &quot;~/bin/dmenu_favourites ~/.config/favourites/apps&quot;"/>
       <property name="&lt;Super&gt;Escape" type="string" value="/bin/sh -c &quot;~/bin/dmenu_favourites ~/.config/favourites/exit&quot;"/>
-      <property name="&lt;Super&gt;space" type="string" value="j4-dmenu-desktop"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;p" type="string" value="/bin/sh -c &quot;~/bin/bitwarden_dmenu&quot;"/>
       <property name="&lt;Super&gt;v" type="string" value="clipmenu"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;m" type="string" value="/bin/sh -c &quot; ~/bin/dmenu_favourites ~/.config/favourites/me&quot;"/>
       <property name="&lt;Super&gt;Return" type="string" value="terminator"/>
+      <property name="&lt;Super&gt;space" type="string" value="rofi -show drun -show-icons"/>
+      <property name="Print" type="string" value="flameshot gui"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
