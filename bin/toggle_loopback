@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source="loopback_gate:Output"
+source="loopback_compressor:Output"
 target_left="system:playback_1"
 target_right="system:playback_2"
 
