@@ -71,7 +71,7 @@ h-index: $alignr ${execi 10 jq -r .hindex ~/.cache/scholar.json}
 Last Update: $alignr ${execi 10 jq -r .last_update ~/.cache/scholar.json}
 
 ${color grey}MOST CITED PAPERS ${hr 1}${color}
-${execi 3600 ~/bin/scholar-stats.py}
+${execi 3600 bash -c "source ./Misc/scholar-stats-env/bin/activate && python ~/bin/scholar-stats.py"}
 title $alignr citations
 ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[0] | .bib.title" ~/.cache/scholar.json  | cut -d ' ' -f1-4 | tr -d "\n" | xargs -0 printf "%s ..."}$alignr ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[0] | .num_citations " ~/.cache/scholar.json}
 ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[1] | .bib.title" ~/.cache/scholar.json  | cut -d ' ' -f1-4 | tr -d "\n" | xargs -0 printf "%s ..."}$alignr ${execi 10 jq -r ".publications | sort_by(-.num_citations) | .[1] | .num_citations " ~/.cache/scholar.json}
